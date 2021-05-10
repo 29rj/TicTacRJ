@@ -17,11 +17,13 @@ public class MainActivity extends AppCompatActivity {
 
     int []arr={2,2,2,2,2,2,2,2,2};
 
-    int [][]answer={{0,1,2},{3,4,5},{6,7,8},{0,3,6},{1,4,7},{2,5,8},{1,4,8},{2,4,6}};
+    int [][]answer={{0,1,2},{3,4,5},{6,7,8},{0,3,6},{1,4,7},{2,5,8},{0,4,8},{2,4,6}};
 
     int chance=0;
 
     boolean game=true;
+
+    int count=0;
 
     public void dropIn(View view)
     {
@@ -34,6 +36,8 @@ public class MainActivity extends AppCompatActivity {
         if(arr[numTag]==2 && game) {
 
             arr[numTag]=chance;
+
+            count++;
 
             img.setTranslationY(-1500);
 
@@ -49,7 +53,6 @@ public class MainActivity extends AppCompatActivity {
             for (int[] smallArray : answer) {
                 if (arr[smallArray[0]] == arr[smallArray[1]] && arr[smallArray[1]] == arr[smallArray[2]] && arr[smallArray[0]] != 2) {
                     game=false;
-
                     String msg;
 
                     if (chance == 0) {
@@ -64,6 +67,15 @@ public class MainActivity extends AppCompatActivity {
                     result.setVisibility(View.VISIBLE);
                 }
             }
+        }
+        if(count==9 && game)
+        {
+            game=false;
+            Button playAgain=(Button)findViewById(R.id.playAgain);
+            TextView result=(TextView)findViewById(R.id.result);
+            result.setText("Match Drawn!");
+            playAgain.setVisibility(View.VISIBLE);
+            result.setVisibility(View.VISIBLE);
         }
     }
 
@@ -97,8 +109,6 @@ public class MainActivity extends AppCompatActivity {
 
     public void play(View view)
     {
-        Log.i("Info","PlayAgain!");
-
         Button playAgain=(Button) findViewById(R.id.playAgain);
 
         TextView result=(TextView) findViewById(R.id.result);
@@ -106,8 +116,6 @@ public class MainActivity extends AppCompatActivity {
         playAgain.setVisibility(View.INVISIBLE);
 
         result.setVisibility(View.INVISIBLE);
-
-//        GridLayout grid=(GridLayout)findViewById(R.id.gridding);
 
         ImageView img1=(ImageView)findViewById(R.id.imageView1);
         img1.setImageDrawable(null);
@@ -144,6 +152,8 @@ public class MainActivity extends AppCompatActivity {
         game=true;
 
         chance=0;
+
+        count=0;
     }
 
     @Override
