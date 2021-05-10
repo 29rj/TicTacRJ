@@ -107,7 +107,34 @@ public class MainActivity extends AppCompatActivity {
 
         result.setVisibility(View.INVISIBLE);
 
-        GridLayout grid=(GridLayout)findViewById(R.id.gridding);
+//        GridLayout grid=(GridLayout)findViewById(R.id.gridding);
+
+        ImageView img1=(ImageView)findViewById(R.id.imageView1);
+        img1.setImageDrawable(null);
+
+        ImageView img2=(ImageView)findViewById(R.id.imageView2);
+        img2.setImageDrawable(null);
+
+        ImageView img3=(ImageView)findViewById(R.id.imageView3);
+        img3.setImageDrawable(null);
+
+        ImageView img4=(ImageView)findViewById(R.id.imageView4);
+        img4.setImageDrawable(null);
+
+        ImageView img5=(ImageView)findViewById(R.id.imageView5);
+        img5.setImageDrawable(null);
+
+        ImageView img6=(ImageView)findViewById(R.id.imageView6);
+        img6.setImageDrawable(null);
+
+        ImageView img7=(ImageView)findViewById(R.id.imageView7);
+        img7.setImageDrawable(null);
+
+        ImageView img8=(ImageView)findViewById(R.id.imageView8);
+        img8.setImageDrawable(null);
+
+        ImageView img9=(ImageView)findViewById(R.id.imageView9);
+        img9.setImageDrawable(null);
 
         for(int i=0;i<arr.length;i++)
         {
